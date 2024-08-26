@@ -79,13 +79,13 @@ def get_sc_chart(entered_site,entered_paylod):
     if entered_site == 'ALL':
         fig = px.scatter(
         filtered_df, x="Payload Mass (kg)", y="class", 
-        color="Booster Version Category",title='Correlation between Payload Mass and success for all sites  ')
+        color="Booster Version Category",title='Correlation between Payload Mass and success for all sites',range_x=entered_paylod)
         return fig
     else:
         filtered_df1=filtered_df[filtered_df['Launch Site'].isin([entered_site])]
         fig = px.scatter(
         filtered_df1, x="Payload Mass (kg)", y="class", 
-        color="Booster Version Category",title='Correlation between Payload Mass and success')
+        color="Booster Version Category",title='Correlation between Payload Mass and success',range_x=entered_paylod)
         return fig
 
 # Run the app
